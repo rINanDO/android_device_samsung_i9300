@@ -34,7 +34,11 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/i9300/bluetooth
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
+ifeq ($(WITH_MAGISKRAMDISK),true)
+TARGET_KERNEL_CONFIG := lineageos_i9300_magisk_defconfig
+else
 TARGET_KERNEL_CONFIG := lineageos_i9300_defconfig
+endif
 
 TARGET_SPECIFIC_HEADER_PATH += device/samsung/i9300/include
 
